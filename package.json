@@ -1,0 +1,23 @@
+{
+  "name": "react-games-collection",
+  "version": "1.0.0",
+  "description": "A collection of games based on React.",
+  "main": "index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ly980408/react-games-collection.git"
+  },
+  "keywords": [
+    "React",
+    "Games",
+    "JavaScript"
+  ],
+  "author": "Yangyang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ly980408/react-games-collection/issues"
+  },
+  "homepage": "https://github.com/ly980408/react-games-collection#readme"
+}
