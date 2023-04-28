@@ -1,5 +1,10 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"],
+      "games/*": ["games/*"]
+    },
     "target": "ESNext",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "module": "ESNext",
@@ -19,6 +24,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "games"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

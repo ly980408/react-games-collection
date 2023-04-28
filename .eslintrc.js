@@ -3,6 +3,7 @@ module.exports = {
     'airbnb',
     'prettier',
     'plugin:react/recommended',
+    'plugin:import/typescript',
     'plugin:markdown/recommended',
   ],
   env: {
@@ -11,6 +12,11 @@ module.exports = {
     jasmine: true,
     jest: true,
     es6: true,
+  },
+  settings: {
+    "import/resolver": {
+      typescript: {},
+    }
   },
   parser: '@typescript-eslint/parser',
   plugins: ['react', '@typescript-eslint', 'react-hooks', 'markdown'],
@@ -35,5 +41,7 @@ module.exports = {
     'semi': 2,
     'react/jsx-filename-extension': 0,
     'react/function-component-definition': 0,
+    'import/no-extraneous-dependencies': 0,
+    'import/extensions': 0,
   },
 };
