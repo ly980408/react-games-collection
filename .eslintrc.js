@@ -1,13 +1,39 @@
 module.exports = {
-  parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint'],
   extends: [
-    'plugin:@typescript-eslint/recommended',
-    'prettier/@typescript-eslint',
-    'plugin:prettier/recommended',
+    'airbnb',
+    'prettier',
+    'plugin:react/recommended',
+    'plugin:markdown/recommended',
+  ],
+  env: {
+    browser: true,
+    node: true,
+    jasmine: true,
+    jest: true,
+    es6: true,
+  },
+  parser: '@typescript-eslint/parser',
+  plugins: ['react', '@typescript-eslint', 'react-hooks', 'markdown'],
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx'],
+      rules: {
+        '@typescript-eslint/no-unused-vars': [2, { args: 'none' }],
+        'no-unused-expressions': 'off',
+        '@typescript-eslint/no-unused-expressions': 2,
+        '@typescript-eslint/consistent-type-imports': [2, { disallowTypeAnnotations: false }],
+      },
+    },
+    {
+      // In v2, explicitly apply eslint-plugin-markdown's `markdown`
+      // processor on any Markdown files you want to lint.
+      files: ['games/**/*.md'],
+      processor: 'markdown/markdown',
+    },
   ],
   rules: {
-    "semi": ["error"]
+    'semi': 2,
+    'react/jsx-filename-extension': 0,
+    'react/function-component-definition': 0,
   },
-  files: ["src/**/*.{ts,tsx}", "packages/**/*.{ts,tsx}"]
 };
