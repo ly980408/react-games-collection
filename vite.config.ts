@@ -1,15 +1,18 @@
+import path from 'node:path';
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import path from 'path';
+import React from '@vitejs/plugin-react';
+import UnoCSS from 'unocss/vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // root: '',
-  plugins: [react()],
+  plugins: [
+    UnoCSS(),
+    React(),
+  ],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, './src'),
-      "games": path.resolve(__dirname, './games'),
+      '@': path.resolve(__dirname, './src'),
+      'games': path.resolve(__dirname, './src/games'),
     },
-  }
+  },
 });
