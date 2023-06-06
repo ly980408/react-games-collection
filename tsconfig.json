@@ -3,7 +3,9 @@
     "baseUrl": "./",
     "paths": {
       "@": ["src"],
-      "games/*": ["src/games/*"]
+      "games/*": ["src/games/*"],
+      "utils/*": ["src/utils/*"],
+      "hooks/*": ["src/hooks/*"]
     },
     "target": "ESNext",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
