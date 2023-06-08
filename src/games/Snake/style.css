@@ -1,12 +1,19 @@
-#game-snake {}
+#game-snake {
+
+  --snake-bg-color: salmon;
+  /* --snake-bg-color: violet */
+  /* --snake-bg-color: salmon */
+  /* --snake-bg-color: skyblue */
+  /* --snake-bg-color: palegreen */
+
+}
 
 .board {
   width: 480px;
   height: 480px;
-  background-color: #dc7aaa;
-  /* border: 4px solid #000; */
   box-sizing: content-box;
   position: relative;
+  background-color: var(--snake-bg-color);
 }
 
 .node {
@@ -35,4 +42,32 @@
   background-image: url('./assets/fish.png');
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.game-intro {
+  font-size: 18px;
+  color: rgba(0,0,0,.85);
+}
+
+.game-intro button {
+  border: none;
+  padding: 5px 24px;
+  background: tomato;
+  font-size: 18px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+.game-intro button:hover {
+  opacity: 0.8;
 }
