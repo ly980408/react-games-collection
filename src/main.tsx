@@ -6,7 +6,9 @@ import './style.css';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <div>React Games Collection -- [{GameSnake.GAME_NAME}]</div>
+    <h1>React Games Collection</h1>
+
+    <h2>[{GameSnake.GAME_NAME}]</h2>
 
     <div id="game-container">
       <GameSnake />

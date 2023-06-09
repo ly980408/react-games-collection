@@ -24,6 +24,18 @@ export type SnakeAction = {
   direction: SnakeState['direction']
 };
 
+export const initialState: SnakeState = {
+  status: 'initial',
+  score: 0,
+  nodes: [
+    [0, 0],
+    [1, 0],
+    [2, 0],
+  ],
+  direction: 'right',
+  food: [5, 5],
+};
+
 export function snakeReducer(state: SnakeState, action: SnakeAction): SnakeState {
   const nodes = [...state.nodes];
   let head = nodes[nodes.length - 1];
@@ -35,15 +47,8 @@ export function snakeReducer(state: SnakeState, action: SnakeAction): SnakeState
     case ACTION_TYPE.START:
       if (state.status === 'gameover') {
         return {
+          ...initialState,
           status: 'moving',
-          score: 0,
-          nodes: [
-            [0, 0],
-            [1, 0],
-            [2, 0],
-          ],
-          direction: 'right',
-          food: [5, 5],
         };
       }
       return {
@@ -113,15 +118,3 @@ export function snakeReducer(state: SnakeState, action: SnakeAction): SnakeState
       return state;
   }
 }
-
-export const initialState: SnakeState = {
-  status: 'initial',
-  score: 0,
-  nodes: [
-    [0, 0],
-    [1, 0],
-    [2, 0],
-  ],
-  direction: 'right',
-  food: [5, 5],
-};
