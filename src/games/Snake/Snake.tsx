@@ -1,5 +1,4 @@
 import React, { useReducer } from 'react';
-import { defineGameComponent } from 'utils/defineGameComponent';
 import { useEventListener, useRafInterval } from 'ahooks';
 
 import './style.css';
@@ -46,6 +45,7 @@ const Snake: React.FC = () => {
         {snake.nodes.map((node, index) => {
           return (
             <div
+              // key={`snake_node_${node[0]}_${node[1]}`}
               className={['node', index === snake.nodes.length - 1 && 'head'].filter(Boolean).join(' ')}
               style={{
                 left: `${(node[0] / BOARD_SIZE) * 100}%`,
@@ -72,7 +72,7 @@ const Snake: React.FC = () => {
                 <button onClick={start}>Start</button>
                 <br />
                 <br />
-                Click button or press <i>Enter</i> to start.
+                Click button or press <i>Space</i> to start.
                 <br />
                 <br />
                 Press <i>W/A/S/D</i> or <i>Arrow Keys</i> to change the direction.
@@ -94,7 +94,4 @@ const Snake: React.FC = () => {
   );
 };
 
-export default defineGameComponent(Snake, {
-  GAME_NAME: 'Snake',
-  GAME_NAME_CN: '贪吃蛇',
-});
+export default Snake;

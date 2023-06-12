@@ -1,5 +1,5 @@
 import type { Position } from './shared';
-import { BOARD_SIZE, isCollide, isSamePosition, randomPosition } from './shared';
+import { BOARD_SIZE, MOVE_DIRECTIONS_DISABLE_MAP, isCollide, isSamePosition, randomPosition } from './shared';
 
 export interface SnakeState {
   status: 'initial' | 'moving' | 'gameover'
@@ -15,14 +15,17 @@ export enum ACTION_TYPE {
   CHANGE_DIRECTION = 'change_direction',
 }
 
-export type SnakeAction = {
-  type: ACTION_TYPE.START
-} | {
-  type: ACTION_TYPE.MOVE
-} | {
-  type: ACTION_TYPE.CHANGE_DIRECTION
-  direction: SnakeState['direction']
-};
+export type SnakeAction =
+  | {
+    type: ACTION_TYPE.START
+  }
+  | {
+    type: ACTION_TYPE.MOVE
+  }
+  | {
+    type: ACTION_TYPE.CHANGE_DIRECTION
+    direction: SnakeState['direction']
+  };
 
 export function snakeReducer(state: SnakeState, action: SnakeAction): SnakeState {
   const nodes = [...state.nodes];
@@ -105,6 +108,9 @@ export function snakeReducer(state: SnakeState, action: SnakeAction): SnakeState
         food,
       };
     case ACTION_TYPE.CHANGE_DIRECTION:
+      if (state.direction === action.direction || MOVE_DIRECTIONS_DISABLE_MAP[state.direction] === action.direction) {
+        return state;
+      }
       return {
         ...state,
         direction: action.direction,

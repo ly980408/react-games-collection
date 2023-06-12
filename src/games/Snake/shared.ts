@@ -14,6 +14,13 @@ export const MOVE_DIRECTIONS_KEY_MAP = {
 
 export type directionKeyMap = typeof MOVE_DIRECTIONS_KEY_MAP;
 
+export const MOVE_DIRECTIONS_DISABLE_MAP = {
+  left: 'right',
+  up: 'down',
+  right: 'left',
+  down: 'up',
+} as const;
+
 export type Position = [number, number];
 
 export function isSamePosition(p1: Position, p2: Position): Boolean {

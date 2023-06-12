@@ -1,3 +1,2 @@
 export { default as GameGomoku } from './Gomoku';
-
-export default {};
+export { default as GameSnake } from './Snake';

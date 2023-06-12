@@ -29,7 +29,7 @@
 }
 
 .head {
-  border-radius: none;
+  border-radius: 0;
   background-color: transparent;
   background-image: url('./assets/cat.png');
   background-repeat: no-repeat;
@@ -37,7 +37,7 @@
 }
 
 .food {
-  border-radius: none;
+  border-radius: 0;
   background-color: transparent;
   background-image: url('./assets/fish.png');
   background-repeat: no-repeat;
