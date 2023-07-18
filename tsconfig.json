@@ -2,10 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@": ["src"],
-      "games/*": ["src/games/*"],
-      "utils/*": ["src/utils/*"],
-      "hooks/*": ["src/hooks/*"]
+      "@/*": ["src/*"]
     },
     "target": "ESNext",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],

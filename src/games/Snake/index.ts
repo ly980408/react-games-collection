@@ -1,5 +1,5 @@
-import { defineGameComponent } from 'utils/defineGameComponent';
 import Snake from './Snake';
+import { defineGameComponent } from '@/utils/defineGameComponent';
 
 export default defineGameComponent(Snake, {
   GAME_NAME: 'Snake',
